@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora de Juros Compostos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/calculadora.css">
+</head>
+<body>
+	<div id="titulo">
+			<h1>Calculadora de Juros Compostos</h1>
+	</div>
+
+	<div class="container" id="valores">
+		
+			<div class="row">
+				<div class="col-4">
+					<label for="descobrir">Valor inicial:</label>
+				</div>
+				<div class="col-8">
+					<div class="input-group mb-3">
+						<input type="text" id="valorinicial" maxlength="12" class="form-control no-outline" placeholder="1000" aria-label="1000" aria-describedby="basic-addon2">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<label for="descobrir">Quantidade de meses:</label>
+				</div>
+				<div class="col-8">
+					<select class="custom-select" id="mselect">
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="5">5</option>
+					  <option value="6">6</option>
+					  <option value="7">7</option>
+					  <option value="8">8</option>
+					  <option value="9">9</option>
+					  <option value="10">10</option>
+					  <option value="11">11</option>
+					  <option value="12">12</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<label for="descobrir">Juros em porcentagem:</label>
+				</div>
+				<div class="col-8">
+					<div class="input-group mb-3">
+						<input type="text" id="juros" maxlength="10" class="form-control no-outline" placeholder="2" aria-label="2" aria-describedby="basic-addon2">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<button type="enviar" class="btn btn-1">Enviar</button>
+			</div>
+		
+	</div>
+
+	<div class="container none" id="tabela">
+		<div class="row row-1">
+			<div class="col-2"><i>Mês</i></div>
+			<div class="col-6"><i>Capital</i></div>
+			<div class="col-4"><i>Montante</i></div>
+		</div>
+		<div class="row none" id="0">
+			<div class="col-2">1</div>
+			<div class="col-6"><p id="c0"></p></div>
+			<div class="col-4"><p id="m0"></p></div>
+		</div>
+		<div class="row none" id="1">
+			<div class="col-2">2</div>
+			<div class="col-6"><p id="c1"></p></div>
+			<div class="col-4"><p id="m1"></p></div>
+		</div>
+		<div class="row none" id="2">
+			<div class="col-2">3</div>
+			<div class="col-6"><p id="c2"></p></div>
+			<div class="col-4"><p id="m2"></p></div>
+		</div>
+		<div class="row none" id="3">
+			<div class="col-2">4</div>
+			<div class="col-6"><p id="c3"></p></div>
+			<div class="col-4"><p id="m3"></p></div>
+		</div>
+		<div class="row none" id="4">
+			<div class="col-2">5</div>
+			<div class="col-6"><p id="c4"></p></div>
+			<div class="col-4"><p id="m4"></p></div>
+		</div>
+		<div class="row none" id="5">
+			<div class="col-2">6</div>
+			<div class="col-6"><p id="c5"></p></div>
+			<div class="col-4"><p id="m5"></p></div>
+		</div>
+		<div class="row none" id="6">
+			<div class="col-2">7</div>
+			<div class="col-6"><p id="c6"></p></div>
+			<div class="col-4"><p id="m6"></p></div>
+		</div>
+		<div class="row none" id="7">
+			<div class="col-2">8</div>
+			<div class="col-6"><p id="c7"></p></div>
+			<div class="col-4"><p id="m7"></p></div>
+		</div>
+		<div class="row none" id="8">
+			<div class="col-2">9</div>
+			<div class="col-6"><p id="c8"></p></div>
+			<div class="col-4"><p id="m8"></p></div>
+		</div>
+		<div class="row none" id="9">
+			<div class="col-2">10</div>
+			<div class="col-6"><p id="c9"></p></div>
+			<div class="col-4"><p id="m9"></p></div>
+		</div>
+		<div class="row none" id="10">
+			<div class="col-2">11</div>
+			<div class="col-6"><p id="c10"></p></div>
+			<div class="col-4"><p id="m10"></p></div>
+		</div>
+		<div class="row none" id="11">
+			<div class="col-2">12</div>
+			<div class="col-6"><p id="c11"></p></div>
+			<div class="col-4"><p id="m11"></p></div>
+		</div>
+		<div class="row row-1">
+			<h1>Total do rendimento:</h1>
+		</div>
+		<div class="row">
+			<div class="col-6">Valor absoluto:<p id="va"></p></div>
+			<div class="col-6">Porcentagem:<p id="vap"></p>%</div>
+		</div>
+	</div>
+	
+
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+
+		var vi;
+		var meses;
+		var juros;
+		var M;
+		var i;
+
+		var vis;
+		var J;
+
+		$( "button" ).click(function(){
+		  vi = $( "#valorinicial" ).val();
+		  meses = $( "#mselect" ).val();
+		  juros = $( "#juros" ).val()/100;
+
+		  vis = vi;
+
+		  $("div#tabela").removeClass("none");
+
+		  for (i=0;i<meses;i++){
+		  	debugger;
+		  	$("#"+i).removeClass("none");
+
+		  	$("#c"+i).html(vi);
+
+		  	M = vi * Math.pow(1+juros, 1);
+		  	M = M.toFixed(2);
+		  	$("#m"+i).html(M);
+		  	vi = M;
+		  } 
+
+ 		  J = M - vis;
+ 		  J = J.toFixed(2);
+
+		  $("#va").html(J);
+		  $("#vap").html(J/vis*100);
+		});
+	</script>
+</body>
+</html>
